@@ -15,11 +15,6 @@ Copyright (c) 2025 Luc_Creeper74 - STM32_OPAL_Driver is under the Apache 2.0 Lic
 
 ## Installation
 
-> [!IMPORTANT]
-> Template projects already contain the UART_Driver as a `git` submodule and can be found here :<br>
-> > https://github.com/Lucreeper74/LIFI-Project-Emitter for the Emitter system.<br>
-> > https://github.com/Lucreeper74/LIFI-Project-Receiver for the Receiver system.<br>
-
 Make sure to install the latest version of `git`: <br>
 _See here for Git installation : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git_ 
 
