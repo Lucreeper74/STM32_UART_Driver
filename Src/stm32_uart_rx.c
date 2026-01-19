@@ -22,14 +22,14 @@ UART_Command UART_RX_ParseCmd(UART_RX_Handle* huart_rx) {
         cmd.command[cmd_length] = '\0';
 
         // Get parameter part after space
-        strncpy((char*) cmd.param, space + 1, OPAL_UART_CMD_FIELDS_SIZE - 1);
-        cmd.param[OPAL_UART_CMD_FIELDS_SIZE - 1] = '\0';
+        strncpy((char*) cmd.param, space + 1, UART_CMD_FIELDS_SIZE - 1);
+        cmd.param[UART_CMD_FIELDS_SIZE - 1] = '\0';
         cmd.has_param = true;
         
     } else {
         // No parameter, copy entire buffer as command
-        strncpy(cmd.command, (const char*) huart_rx->rx_buffer, OPAL_UART_CMD_FIELDS_SIZE - 1);
-        cmd.command[OPAL_UART_CMD_FIELDS_SIZE - 1] = '\0';
+        strncpy(cmd.command, (const char*) huart_rx->rx_buffer, UART_CMD_FIELDS_SIZE - 1);
+        cmd.command[UART_CMD_FIELDS_SIZE - 1] = '\0';
     }
 
     // Clear command ready flag after processing
@@ -48,7 +48,7 @@ void UART_RX_Callback(UART_HandleTypeDef* huart) {
         huart_rx.rx_index = 0; // Reset index for next command
     } else {
         // Store received character in buffer if space is available
-        if (huart_rx.rx_index < OPAL_UART_RX_BUFFER_SIZE - 1) {
+        if (huart_rx.rx_index < UART_RX_BUFFER_SIZE - 1) {
             huart_rx.rx_buffer[huart_rx.rx_index++] = huart_rx.rx_char;
         } else {
             // Buffer overflow, reset index
