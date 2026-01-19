@@ -7,6 +7,12 @@ This project is a driver, it provide an abstraction layer alongside with the HAL
 
 Copyright (c) 2025 Luc_Creeper74 - STM32_OPAL_Driver is under the Apache 2.0 License.
 
+## Currently supported STM32 MCU Famillies
+| MCU Model Familly | Status                     |
+| :---------------- | :--------------------------|
+| STM32L0xx         | Supported ✅              |
+| STM32F3xx         | Supported ✅              |
+
 ## Installation
 
 > [!IMPORTANT]
